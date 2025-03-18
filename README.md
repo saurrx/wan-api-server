@@ -26,7 +26,7 @@ This repository provides a RESTful API server for Wan2.1, a state-of-the-art vid
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/wan2.1-api.git
+git clone https://github.com/saurrx/wan2.1-api.git
 cd wan2.1-api
 ```
 
