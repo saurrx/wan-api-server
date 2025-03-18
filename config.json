@@ -1,0 +1,82 @@
+{
+    "model_configs": {
+        "t2v-1.3B": {
+            "model_name": "Wan2.1-T2V-1.3B",
+            "task_type": "text-to-video",
+            "description": "Smaller model suitable for consumer GPUs (8GB+ VRAM)",
+            "supported_resolutions": ["480p"],
+            "model_download": "huggingface-cli download Wan-AI/Wan2.1-T2V-1.3B --local-dir ./Wan2.1-T2V-1.3B",
+            "recommended_parameters": {
+                "size": "832*480",
+                "sample_steps": 50,
+                "sample_shift": 5.0,
+                "sample_guide_scale": 6.0
+            }
+        },
+        "t2v-14B": {
+            "model_name": "Wan2.1-T2V-14B",
+            "task_type": "text-to-video",
+            "description": "Larger model for higher quality results (16GB+ VRAM)",
+            "supported_resolutions": ["480p", "720p"],
+            "model_download": "huggingface-cli download Wan-AI/Wan2.1-T2V-14B --local-dir ./Wan2.1-T2V-14B",
+            "recommended_parameters": {
+                "size": "1280*720",
+                "sample_steps": 50,
+                "sample_shift": 5.0,
+                "sample_guide_scale": 5.0
+            }
+        },
+        "i2v-14B-480P": {
+            "model_name": "Wan2.1-I2V-14B-480P",
+            "task_type": "image-to-video",
+            "description": "Image to video model optimized for 480p resolution",
+            "supported_resolutions": ["480p"],
+            "model_download": "huggingface-cli download Wan-AI/Wan2.1-I2V-14B-480P --local-dir ./Wan2.1-I2V-14B-480P",
+            "recommended_parameters": {
+                "size": "832*480",
+                "sample_steps": 40,
+                "sample_shift": 3.0,
+                "sample_guide_scale": 5.0
+            }
+        },
+        "i2v-14B-720P": {
+            "model_name": "Wan2.1-I2V-14B-720P",
+            "task_type": "image-to-video",
+            "description": "Image to video model optimized for 720p resolution",
+            "supported_resolutions": ["720p"],
+            "model_download": "huggingface-cli download Wan-AI/Wan2.1-I2V-14B-720P --local-dir ./Wan2.1-I2V-14B-720P",
+            "recommended_parameters": {
+                "size": "1280*720",
+                "sample_steps": 40,
+                "sample_shift": 5.0,
+                "sample_guide_scale": 5.0
+            }
+        }
+    },
+    "prompt_extension": {
+        "methods": {
+            "dashscope": {
+                "description": "Use Alibaba Cloud DashScope API for prompt extension",
+                "requires_api_key": true,
+                "models": {
+                    "text-to-video": "qwen-plus",
+                    "image-to-video": "qwen-vl-max"
+                }
+            },
+            "local_qwen": {
+                "description": "Use local Qwen models for prompt extension",
+                "requires_api_key": false,
+                "models": {
+                    "text-to-video": ["Qwen/Qwen2.5-14B-Instruct", "Qwen/Qwen2.5-7B-Instruct", "Qwen/Qwen2.5-3B-Instruct"],
+                    "image-to-video": ["Qwen/Qwen2.5-VL-7B-Instruct", "Qwen/Qwen2.5-VL-3B-Instruct"]
+                }
+            }
+        },
+        "target_languages": ["en", "zh"]
+    },
+    "default_api_settings": {
+        "port": 3000,
+        "host": "0.0.0.0",
+        "default_model": "t2v-1.3B"
+    }
+}

@@ -1,36 +1,82 @@
-.*
+# Python
+__pycache__/
 *.py[cod]
-# *.jpg
-*.jpeg
-# *.png
-*.gif
-*.bmp
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.python-version
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Model files (too large for GitHub)
+Wan2.1-T2V-1.3B/
+Wan2.1-T2V-14B/
+Wan2.1-I2V-14B-480P/
+Wan2.1-I2V-14B-720P/
+Wan2.1-T2V-1.3B-Diffusers/
+google/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+
+# Generated output files
+outputs/
 *.mp4
 *.mov
 *.mkv
-*.log
-*.zip
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-*.json
-# *.txt
-*.backup
-*.pkl
-*.html
-*.pdf
-*.whl
-cache
-__pycache__/
-storage/
-samples/
-!.gitignore
-!requirements.txt
+*.gif
+*.bmp
+*.jpeg
+!assets/*.png
+!assets/*.jpg
+!examples/*.jpg
+!examples/*.png
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
 .DS_Store
 *DS_Store
-google/
-Wan2.1-T2V-14B/
-Wan2.1-T2V-1.3B/
-Wan2.1-I2V-14B-480P/
-Wan2.1-I2V-14B-720P/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Other
+*.zip
+*.backup
+*.pkl
+*.pdf
+*.whl
+*.log
+cache/
+storage/
+samples/
+
+# Exceptions
+!.gitignore
+!requirements.txt
+!static/index.html
+!config.json

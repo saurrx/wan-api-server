@@ -1,16 +1,35 @@
+# Core ML dependencies
 torch>=2.4.0
 torchvision>=0.19.0
+numpy>=1.23.5,<2
 opencv-python>=4.9.0.80
+pillow>=10.0.0
+
+# Model dependencies
 diffusers>=0.31.0
 transformers>=4.49.0
 tokenizers>=0.20.3
 accelerate>=1.1.1
-tqdm
-imageio
-easydict
-ftfy
-dashscope
-imageio-ffmpeg
-flash_attn
+flash_attn>=2.4.0
+easydict>=1.11
+
+# Media handling
+tqdm>=4.66.0
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9
+ftfy>=6.1.0
+
+# API server dependencies
+flask>=2.3.0
+flask-cors>=4.0.0
+requests>=2.31.0
+
+# UI and demo dependencies
 gradio>=5.0.0
-numpy>=1.23.5,<2
+
+# Model download and prompt extension
+huggingface_hub>=0.23.0
+dashscope>=1.15.0
+
+# Optional: for distributed inference
+xfuser>=0.4.1
